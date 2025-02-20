@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Home from "./pages/Home"
-import Layout from "./components/Layout"
-
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Home from "./pages/Home";
+import Layout from "./components/Layout";
 
 function App() {
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -15,12 +15,14 @@ function App() {
           element: <Home />
         }
       ]
-
     }
-  ])
+  ]);
+
   return (
-    <RouterProvider router={router} />
-  )
+    <div className="font-roboto max-w-[1400px] m-auto">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
-export default App
+export default App;

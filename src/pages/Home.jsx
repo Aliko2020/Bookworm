@@ -1,7 +1,10 @@
+import Hero from "./Hero"
+
+
 function Home(){
-    return(<div>
-        <h1>Home</h1>
-    </div>)
+    return(<main className="flex flex-col gap-4">
+        <Hero />
+    </main>)
 }
 
 export default Home

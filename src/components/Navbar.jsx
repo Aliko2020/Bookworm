@@ -12,12 +12,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 
+
 function Navbar() {
     const [searchInput, setSearchInput] = useState("")
     const dispatch = useDispatch();
     const isDarkMode = useSelector((state)=> state.darkMode.isDarkMode);
-
-
+    const { isAuthenticated, user } = useSelector((state)=> state.auth)
+    
     const handleSearch = (e) => {
         setSearchInput(e.target.value) 
     }
@@ -37,10 +38,10 @@ function Navbar() {
                     />
                 </div>
             </div>
-            <div className="flex items-center gap-4 bg-custom-gray dark:bg-gray-600 px-2 rounded-sm">
-                <Link to="#"><CiUser size={20}/></Link>
+            <div className="flex items-center gap-4 text-gray-500 bg-custom-gray dark:bg-gray-600 px-2 rounded-sm">
+                <Link to="#">{isAuthenticated? <img src={user.picture} alt="user image"/> : <CiUser size={20}/>}</Link>
                 <Link to="#"><CiHeart size={20}/></Link>
-                <Link className="flex items-center bg-custom-yellow py-1 px-3 rounded-sm" to="#"><CiShoppingCart size={20}/>{2}</Link>
+                <Link className="flex items-center bg-custom-yellow  py-1 px-3 rounded-sm" to="#"><CiShoppingCart size={20}/>{2}</Link>
                 <button onClick={() => dispatch(toggleDarkMode())}> {isDarkMode? <CiLight size={20} /> : <CiDark size={20} />} </button>
             </div>
         </nav>

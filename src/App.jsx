@@ -2,6 +2,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
+import Login from "./components/auth/LoginForm";
+import SignUp from "./components/auth/SignUpForm";
+
+
 
 function App() {
 
@@ -13,6 +17,14 @@ function App() {
         {
           path: "/",
           element: <Home />
+        },
+        {
+          path: "login",
+          element: <Login />
+        },
+        {
+          path: "signup",
+          element: <SignUp />
         }
       ]
     }

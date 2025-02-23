@@ -1,5 +1,4 @@
-import Banner from "/banner2.png";
-import { useAuth0 } from "@auth0/auth0-react";
+import Banner from "../assets/images/banner2.png";
 
 
 function Hero() {

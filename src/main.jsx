@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Auth0Provider
       domain="dev-0qiimv3kiizuao5d.us.auth0.com"
-      clientId="JDhMABycz6vDNeemKn4aqT2UTePPGogQ"
+      clientId="6VQorgRJVecIM5nFsOvMAMDWC38nEjL4"
       authorizationParams={{
         redirectUri: "http://localhost:5173/dashboard"
       }}

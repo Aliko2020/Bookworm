@@ -10,8 +10,7 @@ import useAuthListener from "./features/auth/useAuthListener";
 
 function App() {
   const auth = useAuthListener();
-  const { isLoading} = auth;
-  
+
   const router = createBrowserRouter([
     {
       path: "/",

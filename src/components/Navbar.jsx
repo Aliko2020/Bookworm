@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { CiSearch, CiUser, CiHeart, CiShoppingCart } from "react-icons/ci";
+import { CiSearch, CiUser, CiShoppingCart } from "react-icons/ci";
 import { Link} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import userAvatar from "/public/avatar.png";
+import userAvatar from "../assets/images/avatar.png";
 
 
 function Navbar() {

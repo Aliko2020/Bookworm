@@ -1,17 +1,18 @@
-import { useAuth0} from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch } from "react-redux";
 import { setAuthState } from "./authSlice";
 import { useEffect } from "react";
 
-const useAuthListener = ()=>{
-    const { isLoading, isAuthenticated,user } = useAuth0()
-    const dispatch = useDispatch()
+const useAuthListener = () => {
+    const { isLoading, isAuthenticated, user} = useAuth0();
+    const dispatch = useDispatch();
+    console.log(user);
+    
+    useEffect(() => {
+        dispatch(setAuthState({ isAuthenticated, isLoading, user}));
+    }, [isLoading, isAuthenticated, user, dispatch]);
 
-    useEffect(()=>{
-        dispatch(setAuthState({isAuthenticated,isLoading,user}))
-    },[isLoading,isAuthenticated,user])
-
-    return {isAuthenticated, isLoading}
+    return { isAuthenticated, isLoading };
 }
 
-export default useAuthListener
+export default useAuthListener;

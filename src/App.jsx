@@ -5,9 +5,6 @@ import ProtectedRoute from "./features/auth/useProtectRoute";
 import Dashboard from "./components/dashnoard.jsx/Dashboard";
 import useAuthListener from "./features/auth/useAuthListener";
 
-
-
-
 function App() {
   const auth = useAuthListener();
 
@@ -22,7 +19,11 @@ function App() {
         },
         {
           path: "/dashboard",
-          element: <ProtectedRoute auth={auth}><Dashboard /></ProtectedRoute>
+          element: (
+            <ProtectedRoute auth={auth}>
+              <Dashboard />
+            </ProtectedRoute>
+          )
         }
       ]
     }
@@ -30,13 +31,13 @@ function App() {
 
   return (
     <div className="font-roboto max-w-[1400px] m-auto">
-      {/* {isLoading ? (
+      {auth.isLoading ? (
         <div className="flex justify-center items-center h-screen">
           <div className="spinner"></div>
         </div>
-      ) : ( */}
+      ) : (
         <RouterProvider router={router} />
-      {/* )} */}
+      )}
     </div>
   );
 }

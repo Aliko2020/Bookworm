@@ -1,5 +1,10 @@
+import BookCard from "./BookCard";
+
+
 const AllBooks = () => {
-    return <div>All Books Content</div>;
+    return <div className="">
+      <BookCard />
+    </div>;
   };
   
   export default AllBooks;

@@ -1,18 +1,27 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch, CiUser, CiShoppingCart } from "react-icons/ci";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import userAvatar from "../assets/images/avatar.png";
+import books from "../data/Books";
 
 
 function Navbar() {
     const [searchInput, setSearchInput] = useState("");
-    const { isAuthenticated, loginWithRedirect, user } = useAuth0();
-    
-    
+    const [filtered, setFilteredSearch] = useState([])
+
+    const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+
     const handleSearch = (e) => {
         setSearchInput(e.target.value);
+
+        const filter = books.filter((item)=> item.title.toLowerCase().includes(searchInput.toLowerCase()))
+        setFilteredSearch(filtered)
+    };
+
+    const handleLogout = () => {
+        logout({ returnTo: window.location.origin });
     };
 
     return (
@@ -36,21 +45,19 @@ function Navbar() {
                 <Link to="#">
                     {isAuthenticated ? (
                         <img
-                        className="w-6 rounded-full"
+                            className="w-6 rounded-full"
                             src={user?.picture || userAvatar}
                             alt="user"
                             onError={(e) => { e.target.src = userAvatar; }}
                         />
                     ) : (
-                        <CiUser size={20} />
+                        <CiUser size={20} onClick={() => { loginWithRedirect() }} />
                     )}
                 </Link>
-                {/* <Link to="#"><CiHeart size={20} /></Link> */}
                 <Link className="flex items-center bg-custom-yellow text-white py-1 px-3 rounded-sm" to="#"><CiShoppingCart size={20} /></Link>
-                {/* <button onClick={() => dispatch(toggleDarkMode())}>
-                    {isDarkMode ? <CiLight size={20} /> : <CiDark size={20} />}
-                </button> */}
-                <button onClick={()=>{loginWithRedirect()}} className="text-gray">{isAuthenticated? "Dashboard" : "Login"}</button>
+                <button onClick={isAuthenticated ? handleLogout : loginWithRedirect} className="text-gray">
+                    {isAuthenticated ? "Logout" : "Login"}
+                </button>
             </div>
         </nav>
     );

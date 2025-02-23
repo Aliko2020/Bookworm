@@ -4,12 +4,12 @@ import { setAuthState } from "./authSlice";
 import { useEffect } from "react";
 
 const useAuthListener = () => {
-    const { isLoading, isAuthenticated, user} = useAuth0();
+    const { isLoading, isAuthenticated, user } = useAuth0();
     const dispatch = useDispatch();
-    console.log(user);
     
     useEffect(() => {
-        dispatch(setAuthState({ isAuthenticated, isLoading, user}));
+        console.log("useAuthListener - user:", user);
+        dispatch(setAuthState({ isAuthenticated, isLoading, user }));
     }, [isLoading, isAuthenticated, user, dispatch]);
 
     return { isAuthenticated, isLoading };

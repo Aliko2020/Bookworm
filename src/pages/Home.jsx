@@ -3,6 +3,7 @@ import AllBooks from "../components/Books/AllBooks";
 import MostReadBooks from "../components/Books/MostRead";
 import TopBooks from "../components/Books/TopBooks";
 import Hero from "./Hero";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [activeTab, setActiveTab] = useState("all");
@@ -30,8 +31,9 @@ function Home() {
     <main className="flex flex-col gap-4 sm:ml-6">
       <Hero />
       <section className="p-1">
-        <nav className="inline-flex gap-4 w-auto rounded-lg mb-4">
-          <button
+        <nav className="flex justify-between items-center gap-4 w-auto rounded-lg mb-4">
+          <div className="flex gap-4">
+            <button
             onClick={() => setActiveTab("all")}
             className={getButtonClass("all")}
           >
@@ -48,7 +50,8 @@ function Home() {
             className={getButtonClass("top-books")}
           >
             Top Books
-          </button>
+          </button></div>
+          <Link className="underline decoration-custom-yellow underline-offset-8" to="dashboard">Dashboard</Link>
         </nav>
         <div>{renderContent()}</div>
       </section>

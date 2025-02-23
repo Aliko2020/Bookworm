@@ -1,14 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
-import Login from "./components/auth/LoginForm";
-import SignUp from "./components/auth/SignUpForm";
+import ProtectedRoute from "./features/auth/useProtectRoute";
+import Dashboard from "./components/dashnoard.jsx/Dashboard";
+import useAuthListener from "./features/auth/useAuthListener";
+
 
 
 
 function App() {
-
+  const auth = useAuthListener();
+  const { isLoading} = auth;
+  
   const router = createBrowserRouter([
     {
       path: "/",
@@ -19,12 +22,8 @@ function App() {
           element: <Home />
         },
         {
-          path: "login",
-          element: <Login />
-        },
-        {
-          path: "signup",
-          element: <SignUp />
+          path: "/dashboard",
+          element: <ProtectedRoute auth={auth}><Dashboard /></ProtectedRoute>
         }
       ]
     }
@@ -32,7 +31,13 @@ function App() {
 
   return (
     <div className="font-roboto max-w-[1400px] m-auto">
-      <RouterProvider router={router} />
+      {/* {isLoading ? (
+        <div className="flex justify-center items-center h-screen">
+          <div className="spinner"></div>
+        </div>
+      ) : ( */}
+        <RouterProvider router={router} />
+      {/* )} */}
     </div>
   );
 }

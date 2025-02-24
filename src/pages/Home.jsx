@@ -31,7 +31,7 @@ function Home() {
     <main className="flex flex-col gap-4 sm:ml-6">
       <Hero />
       <section className="p-1">
-        <nav className="flex justify-between items-center gap-4 w-auto rounded-lg mb-4">
+        <nav className="flex justify-between text-[#3a7569] font-semibold items-center gap-4 w-auto rounded-lg mb-4">
           <div className="flex gap-4">
             <button
             onClick={() => setActiveTab("all")}

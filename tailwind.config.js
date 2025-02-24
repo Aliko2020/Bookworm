@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         "custom-gray": "#eaeaea", 
-        "custom-yellow": "#FFBF00"
+        "custom-yellow": "#3a7569"
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif']

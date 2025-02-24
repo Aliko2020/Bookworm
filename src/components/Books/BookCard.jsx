@@ -4,18 +4,18 @@ import books from "../../data/Books";
 
 function BookCard({ title, image, description, likes,category }) {
     return (
-        <article className="flex gap-4 max-w-sm border p-2">
-            <img className="max-w-44" src={image} alt={title} />
+        <article className="flex gap-4 max-w-96 border rounded-md p-2">
+            <img className="max-w-32 rounded-md" src={image} alt={title} />
             <div className="flex flex-col justify-between">
-                <h4 className="font-bold text-lg">{title}</h4>
-                <p className="text-sm">{description}</p>
-                <p className="text-sm">{category}</p>
+                <h4 className="font-simibold text-[#351c75] text-lg">{title}</h4>
+                <p className="text-sm leading-relaxed tracking-wide opacity-70">{description}</p>
+                <p className="text-sm opacity-70">{category}</p>
                 <div>
                     <span className="text-sm">Likes {likes}</span>
                 </div>
                 <div>
-                    <button className="flex gap-1 justify-center items-center bg-custom-yellow text-white px-2 rounded-sm">
-                        <IoIosAdd size={20} /> Dashboard
+                    <button className="flex items-center bg-[#9cbcb4] text-white p-1 px-4 rounded-sm">
+                        <IoIosAdd size={20} /> Add
                     </button>
                 </div>
             </div>

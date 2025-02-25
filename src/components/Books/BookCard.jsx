@@ -7,7 +7,7 @@ function BookCard({ title, image, description, likes,category }) {
         <article className="flex gap-4 max-w-96 border rounded-md p-2">
             <img className="max-w-32 rounded-md" src={image} alt={title} />
             <div className="flex flex-col justify-between">
-                <h4 className="font-simibold text-[#351c75] text-lg">{title}</h4>
+                <h4 className="font-simibold text-custom-yellow text-lg">{title}</h4>
                 <p className="text-sm leading-relaxed tracking-wide opacity-70">{description}</p>
                 <p className="text-sm opacity-70">{category}</p>
                 <div>
@@ -25,7 +25,7 @@ function BookCard({ title, image, description, likes,category }) {
 
 function BookList() {
     return (
-        <section className="flex flex-wrap gap-4">
+        <section className="flex flex-wrap justify-between gap-4">
             {books.map((book) => (
                 <BookCard
                 key={book.id}

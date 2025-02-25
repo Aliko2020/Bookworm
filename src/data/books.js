@@ -46,6 +46,14 @@ const books = [
         description: "A novel that tells the story of a young shepherd named Santiago and his journey to find a hidden treasure.",
         likes: 55,
     },
+    {
+        id: 2,
+        title: "The Alchemist",
+        category: "topbooks",
+        image: image1,
+        description: "A novel that tells the story of a young shepherd named Santiago and his journey to find a hidden treasure.",
+        likes: 55,
+    },
 ];
 
 export default books;

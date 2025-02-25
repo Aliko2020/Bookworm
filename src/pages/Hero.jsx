@@ -1,26 +1,38 @@
-import Banner from "../assets/images/banner2.png";
-import momo from "../assets/images/momo.png"
+import Slider from "react-slick";
+import thought from "../assets/images/thought.jpg";
+import alexan from "../assets/images/alexandra.jpg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
+const images = [thought,alexan];
 
-function Hero() {
+const Heroo = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    fade: true
+  };
 
-    return (
-        <section
-            className="flex flex-col lg:flex-row gap-4 font-roboto"
-        >
-            <div className="flex flex-col justify-center gap-2 p-2 max-w-2xl">
-                <h1 className="text-2xl font-simibold text-[#3a7569]">Book Haven</h1>
-                <p className="leading-relaxed tracking-wide opacity-70">
-                    Your one-stop destination for discovering and enjoying the best reads. Explore our curated lists of best-selling and most-read books, add your favorites to your cart, and create your personalized "Next on Read" list. Purchase books easily and have them delivered straight to your email.
-                </p>
-
-                <p className="leading-relaxed tracking-wide opacity-70">
-                    Your one-stop destination for discovering and enjoying the best reads. Explore our curated lists of best-selling and most-read books, add your favorites to your cart, and create your personalized "Next on Read" list. Purchase books easily and have them delivered straight to your email.
-                </p>
+  return (
+    <div className="relative w-full h-[50vh]">
+      <div className="absolute top-0 left-0 w-full h-full rounded-b-xl bg-custom-yellow"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-b-xl"></div>
+      <div className="w-full h-[40vh] flex justify-center items-center">
+        <Slider {...settings} className="w-full h-full">
+          {images.map((image, index) => (
+            <div key={index} className="w-full h-[50vh]">
+              <img src={image} alt={`Slide ${index}`} className="w-full h-full object-cover rounded-b-xl" />
             </div>
-                <img src={momo} alt="Book Cover" className="max-w-md" />
-        </section>
-    );
-}
+          ))}
+        </Slider>
+      </div>
+    </div>
+  );
+};
 
-export default Hero;
+export default Heroo;

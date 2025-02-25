@@ -4,6 +4,8 @@ import MostReadBooks from "../components/Books/MostRead";
 import TopBooks from "../components/Books/TopBooks";
 import Hero from "./Hero";
 import { Link } from "react-router-dom";
+import GetStartedCard from "../components/getStarted/GetStartedCard";
+
 
 function Home() {
   const [activeTab, setActiveTab] = useState("all");
@@ -30,6 +32,7 @@ function Home() {
   return (
     <main className="flex flex-col gap-4 sm:ml-6">
       <Hero />
+      <GetStartedCard />
       <section className="p-1">
         <nav className="flex justify-between text-[#3a7569] font-semibold items-center gap-4 w-auto rounded-lg mb-4">
           <div className="flex gap-4">
@@ -51,7 +54,6 @@ function Home() {
           >
             Top Books
           </button></div>
-          <Link className="underline decoration-custom-yellow underline-offset-8" to="dashboard">Dashboard</Link>
         </nav>
         <div>{renderContent()}</div>
       </section>

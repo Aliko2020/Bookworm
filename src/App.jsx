@@ -4,9 +4,24 @@ import Layout from "./components/Layout";
 import ProtectedRoute from "./features/auth/useProtectRoute";
 import Dashboard from "./components/dashnoard.jsx/Dashboard";
 import useAuthListener from "./features/auth/useAuthListener";
+import { GetStartedModel } from "./components/getStarted/GetStartedModel";
+import { useState, useEffect } from "react";
 
 function App() {
   const auth = useAuthListener();
+  const [showGetStartedModel, setShowGetStartedModel] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowGetStartedModel(true);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleClose = () => {
+    setShowGetStartedModel(false);
+  };
 
   const router = createBrowserRouter([
     {
@@ -15,7 +30,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />
+          element: <Home />,
         },
         {
           path: "/dashboard",
@@ -23,21 +38,26 @@ function App() {
             <ProtectedRoute auth={auth}>
               <Dashboard />
             </ProtectedRoute>
-          )
-        }
-      ]
-    }
+          ),
+        },
+      ],
+    },
   ]);
 
   return (
-    <div className="font-roboto max-w-[1400px] m-auto">
+    <div className="font-roboto max-w-[1300px] m-auto">
       {auth.isLoading ? (
         <div className="flex justify-center items-center h-screen">
-          <div className="spinner"></div>
+          <div class="spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       ) : (
         <RouterProvider router={router} />
       )}
+      {showGetStartedModel && <GetStartedModel onClose={handleClose} />}
     </div>
   );
 }

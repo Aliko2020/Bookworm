@@ -8,7 +8,6 @@ const useAuthListener = () => {
     const dispatch = useDispatch();
     
     useEffect(() => {
-        console.log("useAuthListener - user:", user);
         dispatch(setAuthState({ isAuthenticated, isLoading, user }));
     }, [isLoading, isAuthenticated, user, dispatch]);
 

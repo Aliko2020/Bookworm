@@ -3,8 +3,8 @@ import AllBooks from "../components/Books/AllBooks";
 import MostReadBooks from "../components/Books/MostRead";
 import TopBooks from "../components/Books/TopBooks";
 import Hero from "./Hero";
-import { Link } from "react-router-dom";
 import GetStartedCard from "../components/getStarted/GetStartedCard";
+
 
 
 function Home() {

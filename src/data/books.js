@@ -15,7 +15,7 @@ const books = [
         likes: 43,
     },
     {
-        id: 4,
+        id: 2,
         title: "To Kill a Mockingbird",
         category: "topbooks",
         image: image4,
@@ -23,7 +23,7 @@ const books = [
         likes: 78,
     },
     {
-        id: 2,
+        id: 3,
         title: "The Alchemist",
         category: "topbooks",
         image: image2,
@@ -31,7 +31,7 @@ const books = [
         likes: 55,
     },
     {
-        id: 2,
+        id: 4,
         title: "The Alchemist",
         category: "mostread",
         image: image1,
@@ -39,7 +39,7 @@ const books = [
         likes: 55,
     },
     {
-        id: 2,
+        id: 5,
         title: "The Alchemist",
         category: "topbooks",
         image: image1,
@@ -47,7 +47,7 @@ const books = [
         likes: 55,
     },
     {
-        id: 2,
+        id: 6,
         title: "The Alchemist",
         category: "topbooks",
         image: image1,

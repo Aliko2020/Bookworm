@@ -48,7 +48,7 @@ function App() {
     <div className="font-roboto max-w-[1300px] m-auto">
       {auth.isLoading ? (
         <div className="flex justify-center items-center h-screen">
-          <div class="spinner">
+          <div className="spinner">
             <div></div>
             <div></div>
             <div></div>

@@ -4,7 +4,7 @@ import { CiSearch, CiUser, CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import userAvatar from "../assets/images/avatar.png";
-import books from "../data/Books";
+import books from "../data/books";
 
 
 function Navbar() {
@@ -19,7 +19,8 @@ function Navbar() {
         const filter = books.filter((item)=> item.title.toLowerCase().includes(searchInput.toLowerCase()))
         setFilteredSearch(filtered)
     };
-
+    console.log(books);
+    
     const handleLogout = () => {
         logout({ returnTo: window.location.origin });
     };

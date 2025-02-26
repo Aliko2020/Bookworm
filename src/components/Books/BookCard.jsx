@@ -1,8 +1,7 @@
-import React from 'react';
 import { IoIosAdd } from "react-icons/io";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { addToFavorite, removeFromFavorite, addToNextRead, removeFromNextRead } from "../../features/cart/cartSlice";
-import books from "../../data/Books";
+import books from "../../data/books";
 import { useDispatch, useSelector } from "react-redux";
 
 function BookCard({ id, title, image, description, likes, category }) {

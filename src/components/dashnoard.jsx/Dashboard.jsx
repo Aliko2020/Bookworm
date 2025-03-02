@@ -1,17 +1,16 @@
 import { useSelector } from 'react-redux';
-import { format } from 'date-fns';
+import { Link, Outlet } from 'react-router-dom';
+
+
 
 function Dashboard() {
     const user = useSelector((state) => state.auth.user);
-    console.log(user);
-
-    const formattedUpdatedAt = user?.updated_at ? format(new Date(user.updated_at), 'EEEE, p') : '';
 
     return (
-        <div className="flex min-h-screen">
-            <aside className="hidden lg:flex lg:flex-col lg:w-1/5 bg-custom-gray p-4 rounded-md">
+        <div className="flex gap-4 min-h-screen">
+            {/* <aside className="hidden lg:flex lg:flex-col lg:w-1/5 bg-custom-gray border border-custom-yellow p-4 rounded-md">
                 {user && (
-                    <div className="flex flex-col items-center gap-1 bg-white py-4 rounded-md">
+                    <div className="flex flex-col items-center gap-1 border bg-custom-yellow text-white py-4 rounded-md">
                         <img
                             src={user?.picture}
                             alt="User"
@@ -19,12 +18,19 @@ function Dashboard() {
                         />
                         <h2 className="text-xl font-semibold text-custom-yellow">{user.name}</h2>
                         <p className="text-gray-600 text-sm">{user.email}</p>
-                        <p className="text-gray-600 text-sm">Updated at: {formattedUpdatedAt}</p>
+                  
                     </div>
                 )}
-            </aside>
-            <main className="w-full lg:w-4/5 p-10">
-                <h1>Dashboard Component</h1>
+            </aside> */}
+            <main className="w-full rounded-md">
+                <nav className='flex justify-between rounded-sm text-custom-yellow font-semibold items-center py-2'>
+                    <span >Dashboard</span>
+                    <ul className='flex gap-8 rounded-md py-2'>
+                        <li className='underline underline-offset-8'><Link to="favorites">Favorites</Link></li>
+                        <li className='underline underline-offset-8'><Link to="nextread">Read Next</Link></li>
+                    </ul>
+                </nav>
+                <Outlet />
             </main>
         </div>
     );

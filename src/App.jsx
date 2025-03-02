@@ -6,6 +6,10 @@ import Dashboard from "./components/dashnoard.jsx/Dashboard";
 import useAuthListener from "./features/auth/useAuthListener";
 import { GetStartedModel } from "./components/getStarted/GetStartedModel";
 import { useState, useEffect } from "react";
+import DashboardHome from "./components/dashnoard.jsx/DashboardHome";
+import ReadNext from "./components/dashnoard.jsx/ReadNext";
+import Favorites from "./components/dashnoard.jsx/Favorites";
+
 
 function App() {
   const auth = useAuthListener();
@@ -39,6 +43,20 @@ function App() {
               <Dashboard />
             </ProtectedRoute>
           ),
+          children: [
+            {
+              path: "",
+              element: <DashboardHome />
+            },
+            {
+              path: "favorites",
+              element: <Favorites />
+            },
+            {
+              path: "nextread",
+              element: <ReadNext />
+            }
+          ]
         },
       ],
     },

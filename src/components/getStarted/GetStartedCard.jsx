@@ -6,7 +6,7 @@ import readgoal from "../../assets/images/reading_goal.svg";
 const cardData = [
   {
     imgSrc: feedback,
-    title: "Get Book Recommendations",
+    title: "Book Recommendations",
     description:
       "Explore a curated list of book recommendations from users of bookworm.",
     link: "dashboard"

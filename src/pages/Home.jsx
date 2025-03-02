@@ -40,7 +40,7 @@ function Home() {
             onClick={() => setActiveTab("all")}
             className={getButtonClass("all")}
           >
-            All
+            Books
           </button>
           <button
             onClick={() => setActiveTab("most-read")}

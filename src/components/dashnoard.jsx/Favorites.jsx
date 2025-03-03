@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
+import emptybox from "../../assets/images/empty-box.png"
+
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.cart.favorites);
-
   return (
     <div className="py-4">
       
@@ -21,7 +22,10 @@ const Favorites = () => {
             </div>
           ))
         ) : (
-          <p className="text-gray-600">Your favorites list is empty.</p>
+          <div className="flex flex-col justify-center items-center w-full">
+            <img className="mt-10 filter grayscale" src={emptybox} alt="empty-box"/>
+            <p className="text-gray-600 p-4 text-center">Your favorites list is empty.Books you stared⭐ appear here</p>
+          </div>
         )}
       </div>
     </div>

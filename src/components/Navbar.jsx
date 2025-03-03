@@ -56,7 +56,7 @@ function Navbar() {
                     )}
                 </Link>
                 <Link className="flex items-center bg-custom-yellow text-white py-1 px-3 rounded-sm" to="#"><CiShoppingCart size={20} /></Link>
-                <button onClick={isAuthenticated ? handleLogout : loginWithRedirect} className="text-gray">
+                <button onClick={isAuthenticated ? handleLogout : loginWithRedirect} className="text-gray hover:text-red-700">
                     {isAuthenticated ? "Logout" : "Login"}
                 </button>
             </div>

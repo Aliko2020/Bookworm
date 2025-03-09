@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import feedback from "../../assets/images/feedback.png";
 import read from "../../assets/images/read.png";
 import readgoal from "../../assets/images/reading_goal.svg";
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const cardData = [
   {
@@ -16,7 +18,7 @@ const cardData = [
     title: "Track Your Reading",
     description:
       "Keep a log of your reading activities and stay motivated with personalized stats.",
-    link: "dashboard"
+    link: "/dashboard/favorites"
   },
   {
     imgSrc: readgoal,
@@ -28,10 +30,13 @@ const cardData = [
 ];
 
 const GetStartedCard = () => {
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const navigate = useNavigate()
+  
   return (
     <section className="flex justify-between flex-wrap gap-4 mt-4 mb-4">
       {cardData.map((card, index) => (
-        <Link to={card.link} key={index} className="w-full max-w-sm">
+        <div onClick={()=> (isAuthenticated? navigate(card.link): loginWithRedirect())} to={isAuthenticated? card.link : loginWithRedirect} key={index} className="w-full max-w-sm">
           <li
             className="flex gap-4 bg-custom-gray rounded-md p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 opacity-90"
           >
@@ -42,10 +47,10 @@ const GetStartedCard = () => {
             />
             <div className="flex flex-col justify-between">
               <h2 className="text-lg font-semibold text-custom-yellow">{card.title}</h2>
-              <p className="text-sm opacity-90">{card.description}</p>
+              <p className="text-sm leading-relaxed tracking-wide opacity-70">{card.description}</p>
             </div>
           </li>
-        </Link>
+        </div>
       ))}
     </section>
   );

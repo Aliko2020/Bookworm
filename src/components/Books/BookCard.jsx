@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { IoIosAdd } from "react-icons/io";
-import { FaStar, FaRegStar } from "react-icons/fa";
 import { addToFavorite, removeFromFavorite, addToNextRead, removeFromNextRead } from "../../features/cart/cartSlice";
 import books from "../../data/books";
 import { useDispatch, useSelector } from "react-redux";
 import SkeletonCard from "./BookSkeleton";
-
+import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
 
 
 function BookCard({ id, title, image, description, likes, category }) {
@@ -41,20 +40,16 @@ function BookCard({ id, title, image, description, likes, category }) {
         <div className="flex flex-col justify-between">
           <h4 className="font-semibold text-custom-yellow text-lg">{title}</h4>
           <p className="text-sm leading-relaxed tracking-wide opacity-70">{description}</p>
-          <p className="text-sm opacity-70">{category}</p>
-          <div>
-            <span className="text-sm">Likes {likes}</span>
-          </div>
           <div className="flex items-center">
             <button
-              className={`flex items-center ${isNextRead ? 'bg-red-200' : 'bg-[#9cbcb4]'} hover:bg-red-300 text-white p-1 px-4 rounded-sm`}
+              className={`flex items-center ${isNextRead ? 'bg-gray-700' : 'bg-gray-700'} hover:bg-gray-800 text-white p-1 px-8 rounded-2xl`}
               onClick={handleNextReadToggle}
               disabled={isNextRead}
             >
-              <IoIosAdd size={20} /> {isNextRead ? "Added" : "NextRead"}
+             {isNextRead ? "Added" : "Read"}
             </button>
-            <button onClick={handleFavoriteToggle} className="ml-2 text-yellow-500">
-              {isFavorite ? <FaStar size={20} /> : <FaRegStar size={20} />}
+            <button onClick={handleFavoriteToggle} className="ml-2 text-red-700">
+              {isFavorite ? <FaHeart size={20} />:<CiHeart size={24} />  }
             </button>
           </div>
         </div>

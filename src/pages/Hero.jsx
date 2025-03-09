@@ -5,7 +5,7 @@ import alexan from "../assets/images/alexandra.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const images = [alexan];
+const images = [alexan,thought];
 
 const Heroo = () => {
   const [loading, setLoading] = useState(true);

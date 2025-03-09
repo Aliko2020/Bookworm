@@ -1,9 +1,9 @@
 import { useState } from "react";
 import AllBooks from "../components/Books/AllBooks";
-import MostReadBooks from "../components/Books/MostRead";
-import TopBooks from "../components/Books/TopBooks";
+import Recommend from "../components/Books/Recommend";
 import Hero from "./Hero";
 import GetStartedCard from "../components/getStarted/GetStartedCard";
+
 
 
 
@@ -15,9 +15,7 @@ function Home() {
       case "all":
         return <AllBooks />;
       case "most-read":
-        return <MostReadBooks />;
-      case "top-books":
-        return <TopBooks />;
+        return <Recommend />;
       default:
         return <AllBooks />;
     }
@@ -46,14 +44,9 @@ function Home() {
             onClick={() => setActiveTab("most-read")}
             className={getButtonClass("most-read")}
           >
-            Most Read
+            Recommend 
           </button>
-          <button
-            onClick={() => setActiveTab("top-books")}
-            className={getButtonClass("top-books")}
-          >
-            Top Books
-          </button></div>
+          </div>
         </nav>
         <div>{renderContent()}</div>
       </section>

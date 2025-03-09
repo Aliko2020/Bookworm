@@ -23,8 +23,8 @@ const Favorites = () => {
           ))
         ) : (
           <div className="flex flex-col justify-center items-center w-full">
-            <img className="mt-10 filter grayscale" src={emptybox} alt="empty-box"/>
-            <p className="text-gray-600 p-4 text-center">Your favorites list is empty.Books you stared⭐ appear here</p>
+            <img className="mt-20 max-w-40 filter grayscale" src={emptybox} alt="empty-box"/>
+            <p className="text-lg p-4 text-center text-custom-yellow">Your favorites list is empty.Books you stared⭐ appear here</p>
           </div>
         )}
       </div>

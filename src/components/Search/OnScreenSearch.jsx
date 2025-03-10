@@ -46,7 +46,7 @@ const OnScreenSearch = () => {
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-2 right-2 text-gray-600 hover:text-gray-700"
+          className="absolute top-2 right-6 rounded-t-md p-2 text-gray-400 hover:text-gray-700"
         >
           ✕
         </button>

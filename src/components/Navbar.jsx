@@ -62,7 +62,7 @@ function Navbar() {
         </Link>
         <button
           onClick={isAuthenticated ? handleLogout : loginWithRedirect}
-          className="text-gray hover:text-red-700"
+          className="text-gray hover:text-gray-800"
         >
           {isAuthenticated ? "Logout" : "Login"}
         </button>

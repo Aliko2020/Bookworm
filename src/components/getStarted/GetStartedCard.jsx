@@ -38,7 +38,7 @@ const GetStartedCard = () => {
       {cardData.map((card, index) => (
         <div onClick={()=> (isAuthenticated? navigate(card.link): loginWithRedirect())} to={isAuthenticated? card.link : loginWithRedirect} key={index} className="w-full max-w-sm">
           <li
-            className="flex gap-4 bg-custom-gray rounded-md p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 opacity-90"
+            className="flex gap-4 bg-custom-gray rounded-md p-4 shadow-sm hover:shadow-lg transition-shadow duration-300 opacity-90"
           >
             <img
               className="w-24 h-24 rounded-md"

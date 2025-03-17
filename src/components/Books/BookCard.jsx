@@ -33,7 +33,7 @@ function BookCard({ id, title, image, description, likes, category }) {
   };
 
   return (
-    <article className="flex gap-4 max-w-96 border rounded-md p-2">
+    <article className="flex gap-4 max-w-md border rounded-md p-2">
       {!isImageLoaded && <SkeletonCard />}
       <img className={`max-w-32 rounded-md ${!isImageLoaded && 'hidden'}`} src={image} alt={title} onLoad={() => setIsImageLoaded(true)} />
       {isImageLoaded && (

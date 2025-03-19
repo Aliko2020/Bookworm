@@ -37,7 +37,7 @@ function BookCard({ id, title, image, description, likes, category }) {
       {!isImageLoaded && <SkeletonCard />}
       <img className={`max-w-32 rounded-md ${!isImageLoaded && 'hidden'}`} src={image} alt={title} onLoad={() => setIsImageLoaded(true)} />
       {isImageLoaded && (
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-around">
           <h4 className="font-semibold text-custom-yellow text-lg">{title}</h4>
           <p className="text-sm leading-relaxed tracking-wide opacity-70">{description}</p>
           <div className="flex items-center">

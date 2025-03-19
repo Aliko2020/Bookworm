@@ -7,20 +7,8 @@ const DashboardHome = () => {
   
   return (
     <div className="flex justify-between text-gray-500">
-      <div className="flex w-full p-4  rounded-md bg-custom-gray m-2 mt-4">
-        <div className="flex flex-col mt-4 gap-2 ">
-          <h2 className="text-2xl">Welcome back, {user.name}!</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            iure quas! Itaque, maiores. Eos perferendis, officiis, consequatur
-            expedita facilis dolorem quaerat beatae dignissimos voluptatibus
-            odio possimus! Libero voluptatem ducimus eveniet.
-          </p>
-          
-        </div>
-      </div>
-      <div className="hidden lg:flex flex-col bg-custom-gray w-full p-4 bg-custom-light-gray m-2 mt-4 max-w-[249px] rounded">
-        <div className="flex flex-col items-center bg-gray-300 p-4 rounded-md">
+      <div className="hidden lg:flex flex-col bg-custom-gray w-full p-4 bg-custom-light-gray m-2 mt-4 max-w-[269px] rounded">
+        <div className="flex flex-col items-center p-4 rounded-md">
           <img
             src={user.picture}
             alt={`${user.name}'s profile`}
@@ -33,7 +21,7 @@ const DashboardHome = () => {
             {user.email}
           </p>
         </div>
-        <div className="flex justify-between mt-4 bg-gray-300 p-2 rounded-md font-semibold">
+        <div className="flex justify-between mt-4 bg-white p-2 rounded-md font-semibold">
           <div className="flex flex-col justify-center items-center gap-2 pr-4 border-r border-gray-[#ceccc8]">
             <span>57</span>
             <span>Books Read</span>
@@ -44,6 +32,19 @@ const DashboardHome = () => {
           </div>
         </div>
       </div>
+      <div className="flex w-full p-4  rounded-md bg-custom-gray m-2 mt-4">
+        <div className="flex flex-col mt-4 gap-2 ">
+          <h2 className="text-2xl">Welcome back, {user.name}!</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+            iure quas! Itaque, maiores. Eos perferendis, officiis, consequatur
+            expedita facilis dolorem quaerat beatae dignissimos voluptatibus
+            odio possimus! Libero voluptatem ducimus eveniet.
+          </p>
+          
+        </div>
+      </div>
+      
     </div>
   );
 };

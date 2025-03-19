@@ -13,7 +13,6 @@ function Dashboard() {
             <main className="w-full rounded-md">
                 <nav className='flex justify-between rounded-sm font-semibold px-2 items-center'>
                         <ul className='flex gap-4 text-gray-500 rounded-md'>
-                            <li><Link className="flex gap-2 items-center bg-custom-gray px-4 py-2 rounded-md hover:bg-custom-yellow hover:text-white" to="/" ><IoMdHome />Home</Link></li>
                             <li><Link className="flex gap-2 items-center bg-custom-gray px-4 py-2 rounded-md hover:bg-custom-yellow hover:text-white" to="favorites" ><FaAlignJustify />Favouites</Link></li>
                             <li><Link className="flex gap-2 items-center bg-custom-gray px-4 py-2 rounded-md hover:bg-custom-yellow hover:text-white" to="nextread" ><FaBookOpenReader />NextRead</Link></li>
                         </ul>

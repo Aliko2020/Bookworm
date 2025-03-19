@@ -64,7 +64,7 @@ const OnScreenSearch = () => {
         <ul className="mt-4">
           {filtered.map((book) => (
             <li
-              className="text-gray-400 hover:bg-gray-200 rounded-md shadow-sm px-4 py-2"
+              className="text-gray-400 hover:bg-gray-200 rounded-md shadow-sm px-4 py-2 cursor-pointer"
               key={book.id}
             >
               {book.volumeInfo?.title || "No title available"}

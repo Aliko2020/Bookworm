@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { toggleSearchBar } from "../../features/searchState/searchSlice";
+import { addSearchBook } from "../../features/booksearch/bookSlice";
+import { useNavigate } from "react-router-dom";
+
+
 
 
 const OnScreenSearch = () => {
@@ -9,6 +13,7 @@ const OnScreenSearch = () => {
   const [filtered, setFilteredSearch] = useState([]);
   const [error, setError] = useState(null);
   const dispatch = useDispatch(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -40,6 +45,8 @@ const OnScreenSearch = () => {
     dispatch(toggleSearchBar()); 
   };
 
+
+
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm lg:max-w-lg relative">
@@ -66,6 +73,10 @@ const OnScreenSearch = () => {
             <li
               className="text-gray-400 hover:bg-gray-200 rounded-md shadow-sm px-4 py-2 cursor-pointer"
               key={book.id}
+              onClick={()=>{
+                dispatch(addSearchBook(book))
+                navigate(`/book-details/${book.id}`)
+              }}
             >
               {book.volumeInfo?.title || "No title available"}
             </li>

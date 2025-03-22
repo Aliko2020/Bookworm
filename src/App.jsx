@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import DashboardHome from "./components/dashnoard.jsx/DashboardHome";
 import ReadNext from "./components/dashnoard.jsx/ReadNext";
 import Favorites from "./components/dashnoard.jsx/Favorites";
+import BookDetails from "./components/Books/BookDetailPage";
 
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/book-details/:id",
+          element: <BookDetails />,
         },
         {
           path: "/dashboard",
